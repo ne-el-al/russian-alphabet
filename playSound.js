@@ -86,3 +86,6 @@ letters.forEach((letter) => letter.addEventListener("click", playSound));
 
 // keyboard event handling
 document.addEventListener("keydown", playSound);
+
+// animation finish after css transition finished 
+letters.forEach(letter => letter.addEventListener("transitionend", removeTransition));
