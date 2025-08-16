@@ -57,7 +57,7 @@ function removeTransition(e) {
 }
 
 function playSound(e) {
-    let button;
+    var button;
     var keyValue;
     if (e.type == "click") {
         keyValue = this.childNodes[3].innerText.toUpperCase();
