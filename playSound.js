@@ -62,13 +62,17 @@ function playSound(e) {
     if (e.type == "click") {
         keyValue = this.childNodes[3].innerText.toUpperCase();
         button = letterObjects.find((object) => object.name === keyValue);
+        div = this;
     }
     else {
         keyValue = e.key;
-        console.log(keyValue);
-        button = letterObjects.find((object) => object.key === keyValue)
+        button = letterObjects.find((object) => object.key === keyValue);
+        const selectedDiv = Array.from(document.querySelectorAll(".letter")).find((div) => div.childNodes[3].innerText.toUpperCase() === button.name);;
+        div = selectedDiv;
     }
     if (!button) return;
+
+    div.classList.add("playing");
 
     button.play();
 }
